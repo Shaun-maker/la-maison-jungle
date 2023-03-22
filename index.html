@@ -15,10 +15,37 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         function Header() {
-            return <h1>La maison jungle</h1>
+            return (<h1>La maison jungle</h1>);
         }
 
-        ReactDOM.render(<Header />, document.getElementById("root"));
+        function Description() {
+            const text = "Venez acheter toutes les plantes que vous voulez ! 🌱🌵";
+            return (<p>{ text }</p>);
+        }
+
+        function Math() {
+            return (<p>D'après JavaScript, 3 * 2 font : { 3 * 8 }</p>)
+        }
+
+        function Upper() {
+            return (<p>React est également capable de passer une chaine en majuscule : { "axel".toUpperCase() }</p>)
+        }
+
+        function Ternary() {
+            return (<p>Ou encore des ternaires : { 2 < 0 ? 'Deux est supérieur à 0' : 'Ceci napparaitra jamais' }</p>);
+        }
+
+        function Banner() {
+            return (<div>
+                <Header />
+                <Description />
+                <Math />
+                <Upper />
+                <Ternary />
+            </div>)
+        }
+
+        ReactDOM.render(<Banner />, document.getElementById("root"));
     </script>
 </body>
 </html>
