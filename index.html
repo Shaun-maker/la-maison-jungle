@@ -7,20 +7,18 @@
     <title>Mon titre</title>
 </head>
 <body>
-
-    <div id="react-goes-here">
-        hello
-    </div>
-
+    <main id="root">
+        
+    </main>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        function MyComponent() {
-            return <div>Hello, OC !</div>
+        function Header() {
+            return <h1>La maison jungle</h1>
         }
 
-        ReactDOM.render(<MyComponent />, document.getElementById("react-goes-here"));
+        ReactDOM.render(<Header />, document.getElementById("root"));
     </script>
 </body>
 </html>
