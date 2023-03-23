@@ -15,7 +15,39 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         function Header() {
-            return (<h1>La maison jungle</h1>);
+            const title = "La maison jungle";
+            return (<h1>{ title.toUpperCase() }</h1>);
+        }
+
+        function Monstera() {
+            const price = 8;
+            return (<li>Monstera { price } €</li>);
+        }
+
+        function Lierre() {
+            const price = 10;
+            return (<li>Lierre { price } €</li>);
+        }
+
+        function Bouquet(props) {
+            return (<li>Bouquet { props.price } €</li>)
+        }
+
+        function Cart() {
+            const priceMonstera = 8;
+            const priceLierre = 10;
+            const priceBouquet = 15;
+            return (
+            <div>
+                <span>Panier</span>
+                <ul>
+                    <Monstera price={ priceMonstera } />
+                    <Lierre price={ priceLierre } />
+                    <Bouquet price={ priceBouquet } />
+                </ul>
+                <span>Prix total : { priceMonstera + priceLierre + priceBouquet }</span>
+            </div>
+            );
         }
 
         function Description() {
@@ -23,25 +55,11 @@
             return (<p>{ text }</p>);
         }
 
-        function Math() {
-            return (<p>D'après JavaScript, 3 * 2 font : { 3 * 8 }</p>)
-        }
-
-        function Upper() {
-            return (<p>React est également capable de passer une chaine en majuscule : { "axel".toUpperCase() }</p>)
-        }
-
-        function Ternary() {
-            return (<p>Ou encore des ternaires : { 2 < 0 ? 'Deux est supérieur à 0' : 'Ceci napparaitra jamais' }</p>);
-        }
-
         function Banner() {
             return (<div>
                 <Header />
                 <Description />
-                <Math />
-                <Upper />
-                <Ternary />
+                <Cart />
             </div>)
         }
 
