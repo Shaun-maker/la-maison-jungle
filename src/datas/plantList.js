@@ -3,6 +3,8 @@ export const plantList = [
 		name: 'monstera',
 		category: 'classique',
 		id: '1ed',
+		water: 2,
+		light: 1,
 	},
 	{
 		name: 'ficus lyrata',
