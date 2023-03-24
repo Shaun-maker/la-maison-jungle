@@ -1,10 +1,12 @@
+import '../style/Cart.css'
+
 function Cart() {
     const priceMonstera = 8;
     const priceLierre = 10;
     const priceBouquet = 15;
 
     return (
-        <div>
+        <div className='lmj-cart'>
             <span>Panier</span>
             <ul>
                 <li>Monstera : { priceMonstera } €</li>
