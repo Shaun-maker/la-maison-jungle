@@ -11,7 +11,7 @@ function CareScale({scaleValue, careType}) {
         <div>
             {range.map(
                 (rangeElement) => scaleValue >= rangeElement ?
-                    <img key={rangeElement.toString()} src={scaleType} alt='Care scale icon' crossOrigin="anonymous" /> : null
+                    (<img key={rangeElement.toString()} src={scaleType} alt='Care scale icon' />) : null
             )}
         </div>
     )
@@ -19,11 +19,11 @@ function CareScale({scaleValue, careType}) {
 
 function PlantItem({name, cover, id, light, water}) {
     return (
-        <li className='lmj-plant-item' key={id}>
-            <img className='lmj-plant-item-cover' src={cover} alt={ name }/>
+        <li className='lmj-plant-item' key={ id }>
+            <img className='lmj-plant-item-cover' src={ cover } alt={ name } />
             { name }
-            <CareScale careType='light' scaleValue={light} />
-            <CareScale careType='water' scaleValue={water} />
+            <CareScale careType='light' scaleValue={ light } />
+            <CareScale careType='water' scaleValue={ water } />
         </li>
     )
 }
