@@ -1,15 +1,17 @@
 import '../style/PlantItem.css'
+import sun from '../assets/sun.svg'
+import water from '../assets/water.svg'
 
 function CareScale({scaleValue, careType}) {
     const range = [1, 2, 3];
 
-    const scaleType = careType === 'light' ? '/src/assets/sun.svg' : '/src/assets/water.svg';
+    const scaleType = careType === 'light' ? sun : water;
 
     return (
         <div>
             {range.map(
                 (rangeElement) => scaleValue >= rangeElement ?
-                    <img key={rangeElement.toString()} src={scaleType} alt='Care scale' /> : null
+                    <img key={rangeElement.toString()} src={scaleType} alt='Care scale icon' crossOrigin="anonymous" /> : null
             )}
         </div>
     )
