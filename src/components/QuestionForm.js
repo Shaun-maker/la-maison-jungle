@@ -1,16 +1,25 @@
-function handleSubmit(e)
-{
-    e.preventDefault();
-    console.log(e.target["my_input"].value);
-}
+import { useState } from 'react';
+
+
 
 function QuestionForm()
 {
+    const [inputValue, setInputValue] = useState('Posez votre question ici');
+    const isInputError = inputValue.includes('f');
+    function checkValue(value) {
+        if (!value.includes('f')) {
+            setInputValue(value);
+        }
+    }
     return(
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="my_input" defaultValue="Taper votre texte" />
-            <button type="submit">Envoyer</button>
-        </form>
+        <div>
+            <textarea
+                value={inputValue}
+                onChange={(e) => checkValue(e.target.value)}
+            />
+            <button onClick={() => console.log(inputValue)}>🚨 Alertez moi</button>
+            {isInputError && (<div>Erreur : l'input contient la lettre f</div>)}
+        </div>
     )
 }
 
