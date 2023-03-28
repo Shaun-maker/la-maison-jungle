@@ -10,6 +10,7 @@ function Footer() {
         }
     }
 
+    const test = true;
 	return (
 		<footer className='lmj-footer'>
 			<div className='lmj-footer-elem'>
