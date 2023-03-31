@@ -2,6 +2,7 @@
     padding: 32px;
     color: white;
     background-color: #31b572;
+	flex-basis: 20%;
 }
 
 .lmj-cart-add-button {

@@ -7,5 +7,8 @@
 	padding: 32px;
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 800px;
+}
+
+.basis-80 {
+	flex-basis: 80%;
 }

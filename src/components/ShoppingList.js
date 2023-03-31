@@ -9,7 +9,7 @@ function ShoppingList({ cart, updateCart }) {
         []
     )
     return (
-        <div>
+        <div className='basis-80'>
             <ul>
                 { categories.map((category, index) => (
 					<li key={`${category}-${index}`}>{ category }</li>
