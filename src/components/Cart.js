@@ -7,6 +7,18 @@ function Cart({cart, updateCart}) {
 		(acc, plantType) => acc + plantType.amount * plantType.price, 0
 	);
 
+	function removeToCart (name) {
+		for (const plant of cart) {
+			if (plant.name === name) {
+				plant.amount = 0;
+			}
+		}
+		let cartFilteredCurrentPlant = cart.filter(
+			(plant) => plant.name !== name
+		);
+		updateCart([...cartFilteredCurrentPlant]);
+	}
+
 	return isOpen ? (
 		<div className='lmj-cart'>
 			<button
@@ -19,8 +31,10 @@ function Cart({cart, updateCart}) {
 			<ul>
 				{
 					cart.map(({ name, price, amount}, index) => (
-						<div key={`${ name }-${ index }`}>
+						<div  className='lmj-cart-list'
+							key={`${ name }-${ index }`}>
 							{ name } { price }€ x { amount }
+							<button onClick={() => removeToCart(name)}>Supprimer</button>
 						</div>
 					))
 				}

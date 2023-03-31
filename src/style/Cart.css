@@ -29,3 +29,9 @@
 .lmj-cart-closed > button {
 	color: black;
 }
+
+.lmj-cart-list {
+	display: flex;
+	white-space: nowrap;
+	justify-content: space-between;
+}

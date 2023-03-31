@@ -1,14 +1,9 @@
 import { plantList } from '../datas/plantList'
 import '../style/ShoppingList.css'
 import PlantItem from './PlantItem'
+import Categories from './Categories'
 
 function ShoppingList({ cart, updateCart }) {
-    const categories = plantList.reduce(
-        (accumulator, currentValue) =>
-            accumulator.includes(currentValue.category) ? accumulator : accumulator.concat(currentValue.category),
-        []
-    )
-
     function addToCart(name, price) {
         const currentPlantSaved = cart.find((plant) => plant.name === name);
         if (currentPlantSaved) {
@@ -27,11 +22,7 @@ function ShoppingList({ cart, updateCart }) {
 
     return (
         <div className='basis-80'>
-            <ul>
-                { categories.map((category, index) => (
-					<li key={`${category}-${index}`}>{ category }</li>
-				)) }
-            </ul>
+            <Categories />
             <ul className='lmj-plant-list'>
                 {
 					plantList.map(({ id, cover, name, water, light, price }) => (
