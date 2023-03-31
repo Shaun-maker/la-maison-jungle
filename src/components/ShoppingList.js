@@ -2,7 +2,7 @@ import { plantList } from '../datas/plantList'
 import '../style/ShoppingList.css'
 import PlantItem from './PlantItem'
 
-function ShoppingList() {
+function ShoppingList({ cart, updateCart }) {
     const categories = plantList.reduce(
         (accumulator, currentValue) =>
             accumulator.includes(currentValue.category) ? accumulator : accumulator.concat(currentValue.category),
@@ -18,7 +18,10 @@ function ShoppingList() {
             <ul className='lmj-plant-list'>
                 {
 					plantList.map((plant) => (
-                        <PlantItem name={plant.name} cover={plant.cover} key={plant.id} light={plant.light} water={plant.water} />
+                        <div key={plant.id}>
+                            <PlantItem name={plant.name} cover={plant.cover} light={plant.light} water={plant.water} />
+                            <button onClick={() => updateCart(cart + 1)}>Ajouter</button>
+                        </div>
 					))
 				}
             </ul>

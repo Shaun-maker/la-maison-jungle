@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Banner from "./Banner";
 import Cart from "./Cart";
 import ShoppingList from "./ShoppingList";
@@ -6,6 +7,8 @@ import logo from '../assets/leaf.png';
 import '../style/Layout.css'
 
 function App() {
+  const [cart, updateCart] = useState(0);
+
   return (
     <div>
       <Banner>
@@ -13,8 +16,8 @@ function App() {
         <h1 className="lmj-title">La maison jungle</h1>
       </Banner  >
       <div className="lmj-layout-inner">
-        <Cart />
-        <ShoppingList />
+        <Cart cart={cart} updateCart={updateCart} />
+        <ShoppingList cart={cart} updateCart={updateCart} />
       </div>
       <Footer />
     </div>
