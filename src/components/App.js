@@ -7,7 +7,7 @@ import logo from '../assets/leaf.png';
 import '../style/Layout.css'
 
 function App() {
-  const [cart, updateCart] = useState(0);
+  const [cart, updateCart] = useState([]);
 
   return (
     <div>
