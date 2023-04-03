@@ -1,22 +1,24 @@
-import { useState } from 'react'
 import { plantList } from '../datas/plantList'
 
 
-function Categories(categoriesProps) {
+function Categories({ category, setCategory }) {
+
     const listCategories = plantList.reduce(
         (accumulator, currentValue) =>
             accumulator.includes(currentValue.category) ? accumulator : accumulator.concat(currentValue.category),
         []
     )
-    listCategories.push("toutes");
-
-        const [categories, setCategories] = useState("toutes");
-        let categoriesProps.categories = categories;
+    listCategories.unshift("toutes");
 
     return (
         <select>
         { listCategories.map((category, index) => (
-            <option key={`${category}-${index}`}>{ category }</option>
+            <option
+                key={`${category}-${index}`}
+                onClick={ () => setCategory( category )}
+            >
+                { category }
+            </option>
         )) }
         </select>
     )
