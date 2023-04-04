@@ -18,6 +18,12 @@ function Cart({cart, updateCart}) {
 		);
 		updateCart([...cartFilteredCurrentPlant]);
 	}
+
+	useEffect(() => {
+		let jsonCart = JSON.stringify(cart);
+		localStorage.setItem("cart", jsonCart);
+	}, [cart]);
+
 	useEffect(() => {
 		document.title = `LMJ : ${total} € d'achats`
 	}, [total]);

@@ -2,7 +2,7 @@ import { plantList } from '../datas/plantList'
 import '../style/ShoppingList.css'
 import PlantItem from './PlantItem'
 import Categories from './Categories'
-import { useState} from 'react'
+import { useState } from 'react'
 
 function ShoppingList({ cart, updateCart }) {
     function addToCart(name, price) {
