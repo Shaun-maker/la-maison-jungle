@@ -7,7 +7,9 @@ import logo from '../assets/leaf.png';
 import '../style/Layout.css'
 
 function App() {
-  const [cart, updateCart] = useState([]);
+  let storageCart = localStorage.getItem("cart");
+  storageCart = JSON.parse(storageCart);
+  const [cart, updateCart] = useState(storageCart);
 
   return (
     <div>
